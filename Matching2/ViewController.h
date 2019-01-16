@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Deck.h"
 
 @interface ViewController : UIViewController
 
 -(void)setResultText:(NSString *)resultString;
+
+// protected
+// for subclasses
+- (Deck *)createDeck; // abstract
 
 @end
 

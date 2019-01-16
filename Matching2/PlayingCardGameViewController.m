@@ -7,6 +7,7 @@
 //
 
 #import "PlayingCardGameViewController.h"
+#import "PlayingCardDeck.h"
 
 @interface PlayingCardGameViewController ()
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+    
+- (Deck *)createDeck
+{
+    return [[PlayingCardDeck alloc] init];
 }
 
 /*

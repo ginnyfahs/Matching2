@@ -24,8 +24,6 @@
 
 @implementation ViewController
 
-//@synthesize segmentedControl;
-
 -(CardMatchingGame *)game
 {
     if (! _game) _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
@@ -34,23 +32,24 @@
     return _game;
 }
 
--(CardMatchingGame *)redealGame
+//-(CardMatchingGame *)redealGame
+//{
+//    _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
+//                                              usingDeck:[self createDeck]
+//                                                usingVC:self];
+//    return _game;
+//}
+
+- (Deck*)createDeck //abstract
 {
-    _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
-                                              usingDeck:[self createDeck]
-                                                usingVC:self];
-    return _game;
+    return nil;
 }
 
-- (Deck*)createDeck{
-    return [[PlayingCardDeck alloc] init];
-}
-
--(IBAction)touchRedealButton:(UIButton *)sender
-{
-    [self redealGame];
-    [self updateUI];
-}
+//-(IBAction)touchRedealButton:(UIButton *)sender
+//{
+//    [self redealGame];
+//    [self updateUI];
+//}
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
